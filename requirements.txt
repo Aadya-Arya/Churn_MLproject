@@ -1,0 +1,11 @@
+Pandas
+NumPy
+Matplotlib
+Seaborn
+Scikit-learn
+XGBoost
+CatBoost
+Flask
+imbalanced-learn
+Joblib
+-e .
