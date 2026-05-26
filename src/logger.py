@@ -16,5 +16,4 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-
 logging.info("Logging started")
