@@ -8,4 +8,6 @@ CatBoost
 Flask
 imbalanced-learn
 Joblib
+catboost
+xgboost
 -e .
