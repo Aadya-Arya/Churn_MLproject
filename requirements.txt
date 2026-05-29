@@ -1,13 +1,12 @@
 Pandas
 NumPy
-Matplotlib
+matplotlib
 Seaborn
 Scikit-learn
-XGBoost
-CatBoost
 Flask
 imbalanced-learn
 Joblib
 catboost
 xgboost
--e .
+dill
+#-e .
