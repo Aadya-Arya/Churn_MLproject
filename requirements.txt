@@ -9,4 +9,5 @@ Joblib
 catboost
 xgboost
 dill
+Flask
 #-e .

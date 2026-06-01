@@ -30,7 +30,7 @@ class DataTransformation:
     def frequency_encoder(self,X,freq_map):
         X=X.copy()
         for col in X.columns:
-            X[col]=X[col].map(freq_map)
+            X[col]=X[col].map(freq_map).fillna(0)
         return X
 
 
@@ -42,7 +42,7 @@ class DataTransformation:
             binary_cols=['Gender','Senior Citizen','Partner','Dependents','Phone Service','Paperless Billing']
             ordinal_cols=['Contract']
             high_cardinality_cols = ['City']
-            numerical_col=['Zip Code', 'Latitude', 'Longitude', 'Tenure Months', 'Monthly Charges','Total Charges']
+            numerical_col=['Tenure Months', 'Monthly Charges','Total Charges']
             nominal_col=['Multiple Lines', 'Internet Service', 'Online Security', 'Online Backup', 'Device Protection', 'Tech Support', 'Streaming TV', 'Streaming Movies', 'Payment Method']
 
             numerical_pipeline=Pipeline(steps=[("scaler",StandardScaler())])
@@ -72,7 +72,7 @@ class DataTransformation:
             train_data.dropna(subset=['Total Charges'],inplace=True)
             logging.info("Done with the data type issue in Total Charges")
 
-            drop_cols=['CustomerID','Count','Country','State','Lat Long','Churn Label','Churn Score','Churn Reason','CLTV']
+            drop_cols=['CustomerID','Count','Country','State','Lat Long','Churn Label','Churn Score','Churn Reason','CLTV','Zip Code', 'Latitude', 'Longitude']
             train_data.drop(columns=drop_cols,inplace=True)
             test_data.drop(columns=drop_cols,inplace=True)
 
